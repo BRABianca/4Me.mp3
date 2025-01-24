@@ -1,0 +1,19 @@
+import logging
+
+# Configurar logs
+logging.basicConfig(
+    filename="logs/organize.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+def organize_files_by_genre(folder_path):
+    for root, _, files in os.walk(folder_path):
+        for file in files:
+            if file.endswith(".mp3"):
+                file_path = os.path.join(root, file)
+                genre = get_genre_from_file(file_path)
+                genre_folder = os.path.join(folder_path, genre)
+                os.makedirs(genre_folder, exist_ok=True)
+                shutil.move(file_path, os.path.join(genre_folder, file))
+                logging.info(f"Movido: {file} -> {genre_folder}")

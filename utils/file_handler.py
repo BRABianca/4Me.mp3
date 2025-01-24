@@ -1,3 +1,7 @@
+import os
+import shutil
+from utils.id3_reader import get_genre_from_file
+
 def organize_files_by_genre(folder_path):
     supported_formats = (".mp3", ".mp4", ".wav")  # Formatos suportados
     
