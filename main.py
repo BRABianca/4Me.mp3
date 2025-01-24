@@ -1,5 +1,5 @@
+from utils.file_handler import organize_files_by_artist_or_genre
 import os
-from utils.file_handler import organize_files_by_genre
 
 def main():
     print("Bem-vindo ao 4Me.mp3 - Organizador de músicas!")
@@ -11,8 +11,8 @@ def main():
         print("Caminho inválido. Tente novamente.")
         return
     
-    # Organiza os arquivos por gênero
-    organize_files_by_genre(music_folder)
+    # Organiza os arquivos por artista ou gênero
+    organize_files_by_artist_or_genre(music_folder)
     print("Organização concluída! Confira suas pastas.")
 
 if __name__ == "__main__":
